@@ -60,9 +60,19 @@ h1 {
 }
 
 
-
 footer {
   margin-top: 2rem;
   font-size: 0.8rem;
-  opacity: 0.7;
+  opacity: 0.85;
+  color: #cccccc;
+}
+
+footer a {
+  color: #d4af37; /* dorado Cromify */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
