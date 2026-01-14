@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+  color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  max-width: 400px;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #d4af37; /* dorado premium */
+}
+
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+
+.coming {
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.play-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #111;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
