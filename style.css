@@ -49,29 +49,35 @@ h1 {
   color: #e6e6e6;
   letter-spacing: 0.5px;
 }
+
 .play-button {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
+
+  width: min(320px, 86vw);   /* ✅ clave: se adapta al móvil */
+  padding: 14px 16px;        /* ✅ menos alto en móvil */
+
   background: linear-gradient(135deg, #d4af37, #b8962e);
   color: #111;
-  padding: 0.85rem 1.6rem;
+
   border-radius: 12px;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  font-weight: 800;
+  font-size: 0.98rem;
+  line-height: 1.15;         /* ✅ evita que se vea “aplastado” */
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   transition: all 0.25s ease;
   opacity: 0.95;
-  margin: 0.5rem 0; /* 👈 ESTO ES LO QUE FALTA */
-  width: 260px;
-  justify-content: center;
-}
 
+  text-align: center;
+}
 
 .play-button i {
   font-size: 18px;
+  flex: 0 0 auto;
 }
 
 .play-button:hover {
@@ -89,8 +95,10 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-top: 14px;
+  margin-bottom: 26px;
+  align-items: center;
+  width: 100%;
 }
 
 
@@ -110,3 +118,16 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 380px) {
+  .play-button {
+    width: 90vw;
+    font-size: 0.92rem;
+    padding: 12px 14px;
+  }
+
+  .play-button i {
+    font-size: 17px;
+  }
+}
+
