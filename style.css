@@ -63,7 +63,9 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transition: all 0.25s ease;
   opacity: 0.95;
+  margin: 0.5rem 0; /* 👈 ESTO ES LO QUE FALTA */
 }
+
 
 .play-button i {
   font-size: 18px;
