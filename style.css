@@ -42,12 +42,13 @@ h1 {
   opacity: 0.85;
 }
 
-
 .coming {
-  margin-bottom: 1.5rem;
-  font-weight: 500;
+  margin: 22px 0 28px 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #e6e6e6;
+  letter-spacing: 0.5px;
 }
-
 .play-button {
   display: inline-flex;
   align-items: center;
