@@ -82,6 +82,12 @@ h1 {
   opacity: 0.6;
 }
 
+.store-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* 👈 separación perfecta */
+  margin-top: 20px;
+}
 
 
 footer {
