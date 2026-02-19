@@ -65,6 +65,8 @@ h1 {
   transition: all 0.25s ease;
   opacity: 0.95;
   margin: 0.5rem 0; /* 👈 ESTO ES LO QUE FALTA */
+  width: 260px;
+  justify-content: center;
 }
 
 
@@ -86,8 +88,9 @@ h1 {
 .store-buttons {
   display: flex;
   flex-direction: column;
-  gap: 14px; /* 👈 separación perfecta */
-  margin-top: 20px;
+  gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 
