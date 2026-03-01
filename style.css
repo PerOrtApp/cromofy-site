@@ -14,6 +14,10 @@ body {
   justify-content: center;
 }
 
+.telegram-button {
+  background: linear-gradient(135deg, #229ED9, #1c8ec4);
+  color: white;
+}
 
 .container {
   background: rgba(255, 255, 255, 0.03);
