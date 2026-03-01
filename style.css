@@ -145,6 +145,55 @@ h1 {
   opacity: 1;
 }
 
+/* ================================
+   GLOW ANIMADO SUAVE CONSTANTE
+================================ */
+
+/* Google + Apple dorado */
+.store-btn.google,
+.store-btn.apple {
+  position: relative;
+  animation: goldGlow 3s ease-in-out infinite;
+}
+
+/* Telegram glow azul */
+.store-btn.telegram {
+  position: relative;
+  animation: blueGlow 3s ease-in-out infinite;
+}
+
+/* Animación glow dorado */
+@keyframes goldGlow {
+  0% {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.28),
+                0 0 0px rgba(212,175,55,0.0);
+  }
+  50% {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.28),
+                0 0 18px rgba(212,175,55,0.55);
+  }
+  100% {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.28),
+                0 0 0px rgba(212,175,55,0.0);
+  }
+}
+
+/* Animación glow azul Telegram */
+@keyframes blueGlow {
+  0% {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.28),
+                0 0 0px rgba(34,158,217,0.0);
+  }
+  50% {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.28),
+                0 0 18px rgba(34,158,217,0.55);
+  }
+  100% {
+    box-shadow: 0 10px 24px rgba(0,0,0,0.28),
+                0 0 0px rgba(34,158,217,0.0);
+  }
+}
+
 /* ----------------------------
    Footer
 ----------------------------- */
