@@ -48,50 +48,6 @@ h1 {
   letter-spacing: 0.5px;
 }
 
-/* ----------------------------
-   Botón base (actual)
------------------------------ */
-.play-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  width: min(320px, 86vw);   /* ✅ clave: se adapta al móvil */
-  padding: 14px 16px;        /* ✅ menos alto en móvil */
-
-  background: linear-gradient(135deg, #d4af37, #b8962e);
-  color: #111;
-
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 0.98rem;
-  line-height: 1.15;         /* ✅ evita que se vea “aplastado” */
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
-  opacity: 0.95;
-
-  text-align: center;
-}
-
-.play-button i {
-  font-size: 18px;
-  flex: 0 0 auto;
-}
-
-.play-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
-  opacity: 1;
-}
-
-.play-button.disabled {
-  pointer-events: none;
-  opacity: 0.6;
-}
-
 /* Contenedor botones */
 .store-buttons {
   display: flex;
@@ -104,51 +60,59 @@ h1 {
 }
 
 /* ----------------------------
-   BOTONES PRO con brillo
-   (añade estas clases en HTML)
-   - pro-btn
-   - pro-gp / pro-apple / pro-telegram
+   BOTONES PRO (store-btn) + brillo
 ----------------------------- */
 
-/* Evita el morado/azul de enlaces visitados */
-.play-button.pro-btn,
-.play-button.pro-btn:link,
-.play-button.pro-btn:visited {
+.store-btn,
+.store-btn:link,
+.store-btn:visited {
   position: relative;
-  overflow: hidden;
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 
-  /* un pelín más premium */
+  width: min(320px, 86vw);
+  padding: 16px 20px;
+
   border-radius: 14px;
+  font-weight: 800;
+  font-size: 0.98rem;
+  line-height: 1.15;
+
+  text-decoration: none;
+  overflow: hidden;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
   box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+  opacity: 0.98;
+
+  /* evita el morado/azul de links visitados */
+  color: inherit;
 }
 
-/* Telegram PRO (azul + texto blanco) */
-.play-button.pro-telegram,
-.play-button.pro-telegram:link,
-.play-button.pro-telegram:visited {
-  background: linear-gradient(135deg, #229ED9, #1c8ec4) !important;
-  color: #fff !important;
+/* Dorado Cromofy (Google + Apple) */
+.store-btn.google,
+.store-btn.apple {
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #111;
 }
 
-/* Dorados PRO (Google/Apple) - por si quieres diferenciarlos más tarde */
-.play-button.pro-gp,
-.play-button.pro-gp:link,
-.play-button.pro-gp:visited,
-.play-button.pro-apple,
-.play-button.pro-apple:link,
-.play-button.pro-apple:visited {
-  background: linear-gradient(135deg, #d4af37, #b8962e) !important;
-  color: #111 !important;
+/* Telegram PRO (azul oficial) */
+.store-btn.telegram {
+  background: linear-gradient(135deg, #229ED9, #1c8ec4);
+  color: #fff;
 }
 
-/* Iconos siempre coherentes */
-.play-button.pro-btn i {
-  color: inherit !important;
+/* Iconos */
+.store-btn i {
+  font-size: 18px;
+  color: inherit;
+  flex: 0 0 auto;
 }
 
-/* Brillo (shine) */
-.play-button.pro-btn::before {
+/* EFECTO BRILLO */
+.store-btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -158,14 +122,15 @@ h1 {
   background: linear-gradient(
     120deg,
     rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.55) 50%,
+    rgba(255,255,255,0.60) 50%,
     rgba(255,255,255,0) 100%
   );
   transform: skewX(-20deg);
   pointer-events: none;
 }
 
-.play-button.pro-btn:hover::before {
+/* Brillo al hover */
+.store-btn:hover::before {
   animation: shine 0.85s forwards;
 }
 
@@ -173,8 +138,8 @@ h1 {
   to { left: 140%; }
 }
 
-/* Hover más “pro” */
-.play-button.pro-btn:hover {
+/* Hover premium */
+.store-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 16px 34px rgba(0,0,0,0.38);
   opacity: 1;
@@ -202,13 +167,13 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 380px) {
-  .play-button {
+  .store-btn {
     width: 90vw;
     font-size: 0.92rem;
-    padding: 12px 14px;
+    padding: 14px 16px;
   }
 
-  .play-button i {
+  .store-btn i {
     font-size: 17px;
   }
 }
