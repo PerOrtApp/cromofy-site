@@ -14,9 +14,79 @@ body {
   justify-content: center;
 }
 
-.telegram-button {
+.store-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 20px;
+  margin: 12px 0;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* GOOGLE */
+.store-btn.google {
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #111;
+}
+
+/* APPLE */
+.store-btn.apple {
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #111;
+}
+
+/* TELEGRAM PRO */
+.store-btn.telegram {
   background: linear-gradient(135deg, #229ED9, #1c8ec4);
   color: white;
+}
+
+/* ICONOS */
+.store-btn i {
+  font-size: 18px;
+}
+
+/* EFECTO BRILLO */
+.store-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-25deg);
+}
+
+/* Animación al hover */
+.store-btn:hover::before {
+  animation: shine 0.8s forwards;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+/* Elevación al hover */
+.store-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 
 .container {
