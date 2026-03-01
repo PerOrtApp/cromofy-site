@@ -14,81 +14,6 @@ body {
   justify-content: center;
 }
 
-.store-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 16px 20px;
-  margin: 12px 0;
-  border-radius: 14px;
-  font-weight: 700;
-  font-size: 16px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-/* GOOGLE */
-.store-btn.google {
-  background: linear-gradient(135deg, #d4af37, #b8962e);
-  color: #111;
-}
-
-/* APPLE */
-.store-btn.apple {
-  background: linear-gradient(135deg, #d4af37, #b8962e);
-  color: #111;
-}
-
-/* TELEGRAM PRO */
-.store-btn.telegram {
-  background: linear-gradient(135deg, #229ED9, #1c8ec4);
-  color: white;
-}
-
-/* ICONOS */
-.store-btn i {
-  font-size: 18px;
-}
-
-/* EFECTO BRILLO */
-.store-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.6) 50%,
-    rgba(255,255,255,0) 100%
-  );
-  transform: skewX(-25deg);
-}
-
-/* Animación al hover */
-.store-btn:hover::before {
-  animation: shine 0.8s forwards;
-}
-
-@keyframes shine {
-  100% {
-    left: 125%;
-  }
-}
-
-/* Elevación al hover */
-.store-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-}
-
 .container {
   background: rgba(255, 255, 255, 0.03);
   padding: 2rem;
@@ -109,7 +34,6 @@ h1 {
   color: #d4af37; /* dorado premium */
 }
 
-
 .subtitle {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
@@ -124,6 +48,9 @@ h1 {
   letter-spacing: 0.5px;
 }
 
+/* ----------------------------
+   Botón base (actual)
+----------------------------- */
 .play-button {
   display: inline-flex;
   align-items: center;
@@ -143,7 +70,7 @@ h1 {
   line-height: 1.15;         /* ✅ evita que se vea “aplastado” */
 
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
   opacity: 0.95;
 
   text-align: center;
@@ -165,6 +92,7 @@ h1 {
   opacity: 0.6;
 }
 
+/* Contenedor botones */
 .store-buttons {
   display: flex;
   flex-direction: column;
@@ -175,7 +103,86 @@ h1 {
   width: 100%;
 }
 
+/* ----------------------------
+   BOTONES PRO con brillo
+   (añade estas clases en HTML)
+   - pro-btn
+   - pro-gp / pro-apple / pro-telegram
+----------------------------- */
 
+/* Evita el morado/azul de enlaces visitados */
+.play-button.pro-btn,
+.play-button.pro-btn:link,
+.play-button.pro-btn:visited {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+
+  /* un pelín más premium */
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+}
+
+/* Telegram PRO (azul + texto blanco) */
+.play-button.pro-telegram,
+.play-button.pro-telegram:link,
+.play-button.pro-telegram:visited {
+  background: linear-gradient(135deg, #229ED9, #1c8ec4) !important;
+  color: #fff !important;
+}
+
+/* Dorados PRO (Google/Apple) - por si quieres diferenciarlos más tarde */
+.play-button.pro-gp,
+.play-button.pro-gp:link,
+.play-button.pro-gp:visited,
+.play-button.pro-apple,
+.play-button.pro-apple:link,
+.play-button.pro-apple:visited {
+  background: linear-gradient(135deg, #d4af37, #b8962e) !important;
+  color: #111 !important;
+}
+
+/* Iconos siempre coherentes */
+.play-button.pro-btn i {
+  color: inherit !important;
+}
+
+/* Brillo (shine) */
+.play-button.pro-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.55) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.play-button.pro-btn:hover::before {
+  animation: shine 0.85s forwards;
+}
+
+@keyframes shine {
+  to { left: 140%; }
+}
+
+/* Hover más “pro” */
+.play-button.pro-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.38);
+  opacity: 1;
+}
+
+/* ----------------------------
+   Footer
+----------------------------- */
 footer {
   margin-top: 2rem;
   font-size: 0.8rem;
@@ -184,7 +191,7 @@ footer {
 }
 
 footer a {
-  color: #d4af37; /* dorado Cromify */
+  color: #d4af37; /* dorado Cromofy */
   text-decoration: none;
   font-weight: 500;
 }
@@ -193,6 +200,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Responsive */
 @media (max-width: 380px) {
   .play-button {
     width: 90vw;
@@ -204,4 +212,3 @@ footer a:hover {
     font-size: 17px;
   }
 }
-
